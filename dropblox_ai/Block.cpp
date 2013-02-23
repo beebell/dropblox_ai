@@ -26,14 +26,14 @@ CBlock::CBlock(const CBlock& other)
 CBlock::CBlock(const Json::Value& block)
 {
     _type = block["type"].asInt();
-    _center = CCoordinate(block["center"]);
+    _center = CCoordinate(block["center"], false /* isRelative */);
     
     Json::Value offsets = block["offsets"];
     int numOffsets = offsets.size();
     
     for( int i = 0; i < numOffsets; i++)
     {
-        _offsets.push_back(CCoordinate(offsets[i]));
+        _offsets.push_back(CCoordinate(offsets[i], true /* isRelative */));
     }
     
     _computeBoundingOffsets();
@@ -107,7 +107,7 @@ CBlock CBlock::move(int rowOffset, int colOffset) const
 CBlock CBlock::moveTo(int row, int col) const
 {
     CBlock block = *this;
-    block._center = CCoordinate(row, col);
+    block._center = CCoordinate(row, col, false);
     
     return block;
 }

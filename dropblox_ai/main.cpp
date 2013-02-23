@@ -13,6 +13,7 @@
 
 #include "Block.h"
 #include "BoardSurface.h"
+#include "Constants.h"
 #include "Coordinate.h"
 
 using namespace std;
@@ -55,23 +56,23 @@ int main(int argc, const char * argv[])
     vector<CBlock> permutations = block.getPermutations();
     
     int bestcc = -1;
-    float bestScore = 33*12;
+    float bestScore = BOARD_HEIGHT*BOARD_WIDTH;
     int bestPermutation = -1;
 
     srand((unsigned int)time(NULL));
     
     for( int perm = 0; perm < permutations.size(); perm++)
     {
-        int k = rand() % 12;
+        int k = rand() % BOARD_WIDTH;
         
         const CBlock& permutation = permutations[perm];
         cerr << "trying permutation " << perm << ": " << permutation << endl;
         permutation.render();
         cerr << endl;
         
-        for (int cc = 0; cc < 12; cc++)
+        for (int cc = 0; cc < BOARD_WIDTH; cc++)
         {
-            int c3 = (cc + k) % 12;
+            int c3 = (cc + k) % BOARD_WIDTH;
             cerr << "trying col " << c3 << "..." << endl;
             CBlock tmp = permutation.moveTo(permutation.getCenter().getRow(), c3);
             if (surface.check(tmp))

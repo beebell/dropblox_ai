@@ -13,11 +13,9 @@
 #include "jsoncpp/json/json.h"
 
 #include "Block.h"
+#include "Constants.h"
 
 using namespace std;
-
-const int BOARD_HEIGHT = 33;
-const int BOARD_WIDTH = 12;
 
 class CBoardSurface
 {

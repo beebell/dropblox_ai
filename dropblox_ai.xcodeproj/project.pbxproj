@@ -52,6 +52,7 @@
 		044FDC8616D87E7100F0202E /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_valueiterator.inl; sourceTree = "<group>"; };
 		044FDC8716D87E7100F0202E /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
 		044FDC8816D87E7100F0202E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		044FDC9016D91FB000F0202E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +85,7 @@
 		044FDC6716D87DC100F0202E /* dropblox_ai */ = {
 			isa = PBXGroup;
 			children = (
+				044FDC9016D91FB000F0202E /* Constants.h */,
 				044FDC7116D87E7100F0202E /* Block.cpp */,
 				044FDC7216D87E7100F0202E /* Block.h */,
 				044FDC7316D87E7100F0202E /* BoardSurface.cpp */,

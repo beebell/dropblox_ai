@@ -96,22 +96,22 @@ float CBoardSurface::computeScore() const
     
     for(int r = 0; r < BOARD_HEIGHT; r++)
     {
-        float factor = (BOARD_HEIGHT - r) * 1.1;
+        float factor = (BOARD_HEIGHT - r) * HEIGHT_PENALTY;
         for( int c = 0; c < BOARD_WIDTH; c++)
         {
             if (_surface[r][c] != 0)
             {
-                score += 1 * factor;
+                score += OCCUPIED_PENALTY * factor;
                 continue;
             }
             
             if (r > 0 && _isUnreachable(r, c))
             {
-                score += 12 * factor;
+                score += UNREACHABLE_PENALTY * factor;
             }
             else if (r > 0 && _isObstructed(r, c))
             {
-                score += 4 * factor;
+                score += OBSTRUCTED_PENALTY * factor;
             }
         }
     }

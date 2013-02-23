@@ -21,6 +21,8 @@ class CCoordinate
     
 private:
     
+    int _isRelative = false;
+    
     int _row = 0;
     
     int _col = 0;
@@ -41,9 +43,9 @@ public:
     
     CCoordinate(const CCoordinate& other);
     
-    CCoordinate(const Json::Value& location);
+    CCoordinate(const Json::Value& location, bool isRelative);
     
-    CCoordinate(int row, int col);
+    CCoordinate(int row, int col, bool isRelative);
     
 // operators
     
@@ -61,7 +63,7 @@ public:
     
 private:
     
-    void _setLocation(int row, int col);
+    void _setLocation(int row, int col, bool isRelative);
 
 public:
     
