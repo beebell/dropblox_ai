@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044FDC8916D87E7100F0202E /* CBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7116D87E7100F0202E /* CBlock.cpp */; };
-		044FDC8A16D87E7100F0202E /* CBoardSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7316D87E7100F0202E /* CBoardSurface.cpp */; };
-		044FDC8B16D87E7100F0202E /* CCoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7516D87E7100F0202E /* CCoordinate.cpp */; };
+		044FDC8916D87E7100F0202E /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7116D87E7100F0202E /* Block.cpp */; };
+		044FDC8A16D87E7100F0202E /* BoardSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7316D87E7100F0202E /* BoardSurface.cpp */; };
+		044FDC8B16D87E7100F0202E /* Coordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7516D87E7100F0202E /* Coordinate.cpp */; };
 		044FDC8C16D87E7100F0202E /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8416D87E7100F0202E /* json_reader.cpp */; };
 		044FDC8D16D87E7100F0202E /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8516D87E7100F0202E /* json_value.cpp */; };
 		044FDC8E16D87E7100F0202E /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8716D87E7100F0202E /* json_writer.cpp */; };
@@ -30,12 +30,12 @@
 
 /* Begin PBXFileReference section */
 		044FDC6516D87DC100F0202E /* dropblox_ai */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dropblox_ai; sourceTree = BUILT_PRODUCTS_DIR; };
-		044FDC7116D87E7100F0202E /* CBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBlock.cpp; sourceTree = "<group>"; };
-		044FDC7216D87E7100F0202E /* CBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBlock.h; sourceTree = "<group>"; };
-		044FDC7316D87E7100F0202E /* CBoardSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBoardSurface.cpp; sourceTree = "<group>"; };
-		044FDC7416D87E7100F0202E /* CBoardSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBoardSurface.h; sourceTree = "<group>"; };
-		044FDC7516D87E7100F0202E /* CCoordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCoordinate.cpp; sourceTree = "<group>"; };
-		044FDC7616D87E7100F0202E /* CCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCoordinate.h; sourceTree = "<group>"; };
+		044FDC7116D87E7100F0202E /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		044FDC7216D87E7100F0202E /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		044FDC7316D87E7100F0202E /* BoardSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardSurface.cpp; sourceTree = "<group>"; };
+		044FDC7416D87E7100F0202E /* BoardSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardSurface.h; sourceTree = "<group>"; };
+		044FDC7516D87E7100F0202E /* Coordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinate.cpp; sourceTree = "<group>"; };
+		044FDC7616D87E7100F0202E /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		044FDC7916D87E7100F0202E /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
 		044FDC7A16D87E7100F0202E /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		044FDC7B16D87E7100F0202E /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
@@ -84,12 +84,12 @@
 		044FDC6716D87DC100F0202E /* dropblox_ai */ = {
 			isa = PBXGroup;
 			children = (
-				044FDC7116D87E7100F0202E /* CBlock.cpp */,
-				044FDC7216D87E7100F0202E /* CBlock.h */,
-				044FDC7316D87E7100F0202E /* CBoardSurface.cpp */,
-				044FDC7416D87E7100F0202E /* CBoardSurface.h */,
-				044FDC7516D87E7100F0202E /* CCoordinate.cpp */,
-				044FDC7616D87E7100F0202E /* CCoordinate.h */,
+				044FDC7116D87E7100F0202E /* Block.cpp */,
+				044FDC7216D87E7100F0202E /* Block.h */,
+				044FDC7316D87E7100F0202E /* BoardSurface.cpp */,
+				044FDC7416D87E7100F0202E /* BoardSurface.h */,
+				044FDC7516D87E7100F0202E /* Coordinate.cpp */,
+				044FDC7616D87E7100F0202E /* Coordinate.h */,
 				044FDC7716D87E7100F0202E /* jsoncpp */,
 				044FDC8816D87E7100F0202E /* main.cpp */,
 			);
@@ -177,9 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044FDC8916D87E7100F0202E /* CBlock.cpp in Sources */,
-				044FDC8A16D87E7100F0202E /* CBoardSurface.cpp in Sources */,
-				044FDC8B16D87E7100F0202E /* CCoordinate.cpp in Sources */,
+				044FDC8916D87E7100F0202E /* Block.cpp in Sources */,
+				044FDC8A16D87E7100F0202E /* BoardSurface.cpp in Sources */,
+				044FDC8B16D87E7100F0202E /* Coordinate.cpp in Sources */,
 				044FDC8C16D87E7100F0202E /* json_reader.cpp in Sources */,
 				044FDC8D16D87E7100F0202E /* json_value.cpp in Sources */,
 				044FDC8E16D87E7100F0202E /* json_writer.cpp in Sources */,
@@ -282,6 +282,7 @@
 				044FDC7016D87DC100F0202E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

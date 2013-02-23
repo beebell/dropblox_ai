@@ -11,9 +11,9 @@
 
 #include "jsoncpp/json/json.h"
 
-#include "CBlock.h"
-#include "CBoardSurface.h"
-#include "CCoordinate.h"
+#include "Block.h"
+#include "BoardSurface.h"
+#include "Coordinate.h"
 
 using namespace std;
 
@@ -27,9 +27,7 @@ int main(int argc, const char * argv[])
     }
     
     const char *input = argv[1];
-    float timeRemaining = atof(argv[2]);
-    
-    // cerr << timeRemaining << " " << input << endl;
+    // float timeRemaining = atof(argv[2]);
     
     Json::Value root;
     Json::Reader reader;
@@ -47,7 +45,6 @@ int main(int argc, const char * argv[])
     }
     
     CBoardSurface surface(root["bitmap"]);
-    // cerr << "top row: " << surface.getTopRow() << endl;
     surface.render();
     
     CBlock block(root["block"]);
@@ -61,21 +58,21 @@ int main(int argc, const char * argv[])
     float bestScore = 33*12;
     int bestPermutation = -1;
 
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     
     for( int perm = 0; perm < permutations.size(); perm++)
     {
         int k = rand() % 12;
         
         const CBlock& permutation = permutations[perm];
-        cerr << "trying permutation: " << permutation << endl;
+        cerr << "trying permutation " << perm << ": " << permutation << endl;
         permutation.render();
         cerr << endl;
         
         for (int cc = 0; cc < 12; cc++)
         {
             int c3 = (cc + k) % 12;
-            cerr << "trying col " << c3 << endl;
+            cerr << "trying col " << c3 << "..." << endl;
             CBlock tmp = permutation.moveTo(permutation.getCenter().getRow(), c3);
             if (surface.check(tmp))
             {
@@ -101,7 +98,7 @@ int main(int argc, const char * argv[])
         }
     }
     
-    cerr << "best score:" << bestScore << " permutation: " << bestPermutation << " cc:" << bestcc << endl;
+    cerr << endl << "best score:" << bestScore << " permutation: " << bestPermutation << " cc:" << bestcc << endl;
     
     for(int numRotations = permutations[bestPermutation].getNumRotations(); numRotations > 0; numRotations--)
     {
