@@ -5,6 +5,7 @@
 //  Created by Brenda Bell on 2/20/13.
 //
 
+#include <assert.h>
 #include <cstdio>
 #include <cstring>
 #include <iostream>
@@ -56,7 +57,7 @@ int main(int argc, const char * argv[])
     vector<CBlock> permutations = block.getPermutations();
     
     int bestcc = -1;
-    float bestScore = BOARD_HEIGHT*BOARD_WIDTH;
+    float bestScore = -1;
     int bestPermutation = -1;
 
     srand((unsigned int)time(NULL));
@@ -81,15 +82,16 @@ int main(int argc, const char * argv[])
                 // newSurface.render();
                 float score = newSurface.computeScore();
                 cerr << "score " << score << endl;
-                if (score < bestScore)
+                if (bestPermutation == -1
+                    || score < bestScore)
                 {
                     cerr << "recording new best score..." << endl;
                     permutation.render();
                     bestPermutation = perm;
                     bestcc = c3;
                     bestScore = score;
-                    
-                    cerr << "score: " << score << " removed: " << newSurface.getNumRowsRemoved() << endl << endl;
+                    cerr << "best score:" << bestScore << " permutation: " << bestPermutation << " cc:" << bestcc <<
+                        " removed: " << newSurface.getNumRowsRemoved() << endl << endl;
                 }
             }
             else
@@ -101,24 +103,37 @@ int main(int argc, const char * argv[])
     
     cerr << endl << "best score:" << bestScore << " permutation: " << bestPermutation << " cc:" << bestcc << endl;
     
-    for(int numRotations = permutations[bestPermutation].getNumRotations(); numRotations > 0; numRotations--)
+    if (bestPermutation != -1
+        && bestcc != -1)
     {
-        cout << "rotate" << endl;
+        for(int numRotations = permutations[bestPermutation].getNumRotations(); numRotations > 0; numRotations--)
+        {
+            cout << "rotate" << endl;
+        }
+        
+        while(bestcc < permutations[bestPermutation].getCenter().getColumn())
+        {
+            cout << "left" << endl;
+            cout.flush();
+            bestcc++;
+        }
+        
+        while(bestcc > permutations[bestPermutation].getCenter().getColumn())
+        {
+            cout << "right" << endl;
+            cout.flush();
+            bestcc--;
+        }
     }
-    
-    while(bestcc < permutations[bestPermutation].getCenter().getColumn())
+    else
     {
-        cout << "left" << endl;
-        cout.flush();
-        bestcc++;
-    }
-    
-    while(bestcc > permutations[bestPermutation].getCenter().getColumn())
-    {
-        cout << "right" << endl;
-        cout.flush();
-        bestcc--;
+        // something's really wrong
+        surface.render();
+        cerr << endl << block << endl << endl;
+        block.render();
+        assert(false);
     }
     
     return 0;
 }
+                    

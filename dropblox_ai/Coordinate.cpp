@@ -38,6 +38,7 @@ std::ostream& operator<<(std::ostream &strm, const CCoordinate &o)
     return strm << "{CCoordinate:"
     << "[_row=" << o._row << "]"
     << "[_col=" << o._col << "]"
+    << "[_isRelative" << o._isRelative << "]"
     << "}";
 }
 
@@ -60,12 +61,12 @@ std::ostream& operator<<(std::ostream &strm, const vector<CCoordinate>& a)
     return strm << "]";
 }
 
-bool CCoordinate::operator == (const CCoordinate& other) const
+/* bool CCoordinate::operator == (const CCoordinate& other) const
 {
     return _row == other._row
             && _col == other._col
             && _isRelative == other._isRelative;
-}
+} */
 
 // instance methods
 
@@ -86,9 +87,13 @@ void CCoordinate::_setLocation(int row, int col, bool isRelative)
     _row = row;
     _col = col;
     _isRelative = isRelative;
+    
+    // todo: the BOARD_HEIGHT check is a hack because CBoardSurface::drop
+    // expects to be able to drop the piece one row lower than what's valid
+    // need to fix the drop method and change this to do the right thing
     assert(_isRelative
            || (_row >= 0
-               && _row < BOARD_HEIGHT
+               && _row <= BOARD_HEIGHT
                && _col >= 0
                && _col < BOARD_WIDTH));
 }

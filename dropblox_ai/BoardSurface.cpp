@@ -101,7 +101,7 @@ float CBoardSurface::computeScore() const
         {
             if (_surface[r][c] != 0)
             {
-                score += OCCUPIED_PENALTY * factor;
+                score += OCCUPIED_PENALTY * factor * COLUMN_PENALTY[c];
                 continue;
             }
             
@@ -129,6 +129,7 @@ CBoardSurface CBoardSurface::drop(const CBlock& block) const
     {
         tmp = tmp.move(1, 0);
     }
+    
     tmp = tmp.move(-1, 0);
     
     CCoordinate center = tmp.getCenter();
@@ -210,10 +211,11 @@ bool CBoardSurface::_isUnreachable(int row, int col) const
     int right = col + 1;
     int up = row - 1;
     
-    // todo: need to recurse through the open cells
-    // which may be unreachable making this cell
-    // unreachable as well
-    return (left < 0 || _surface[left][row] != 0)
+    /* return (left < 0 || _surface[left][row] != 0)
         && (right >= BOARD_WIDTH || _surface[right][row] != 0)
-        && (up < 0 || _surface[up][col] != 0);
+        && (up < 0 || _surface[up][col] != 0); */
+    
+    return (up < 0 || _surface[up][col] != 0)
+        && (left < 0 || _surface[left][row] != 0 || _isUnreachable(left, row))
+        && (right >= BOARD_WIDTH || _surface[right][row] != 0 || _isUnreachable(right, row));
 }

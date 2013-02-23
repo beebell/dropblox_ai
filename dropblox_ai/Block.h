@@ -76,13 +76,15 @@ private:
     
 public:
     
-    bool operator == (const CBlock&) const;
+    // bool operator == (const CBlock&) const;
     
 // instance methods
     
 private:
     
     void _computeBoundingOffsets();
+    
+    bool _isReciprocal(const CBlock& orig, const CBlock& rotated) const;
     
     CBlock _rotate() const;
     

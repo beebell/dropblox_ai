@@ -52,7 +52,7 @@ std::ostream& operator<<(std::ostream &strm, const CBlock &o) {
     << "}";
 }
 
-bool CBlock::operator==(const CBlock& other) const
+/* bool CBlock::operator==(const CBlock& other) const
 {
     return _type == other._type
         && _center == other._center
@@ -63,7 +63,7 @@ bool CBlock::operator==(const CBlock& other) const
         && _maxColOffset == other._maxColOffset;
     
     // _numRotations intentionally ignored
-}
+} */
 
 // instance methods
 
@@ -71,22 +71,25 @@ vector<CBlock> CBlock::getPermutations() const
 {
     vector<CBlock> permutations;
 
-    // add the unrotated block
+    // start with the original unrotated block
     permutations.push_back(*this);
-
+    
     // iterate through the rotations -- 90, 180 and 270 degrees
     for( int i = 0; i < 3; i++)
     {
         CBlock block = permutations.back()._rotate();
         
-        // todo: need to test this
-        // some blocks are mirror images when flipped vert or horz so
-        // don't include the dups
-        if(std::find(permutations.begin(), permutations.end(), block) == permutations.end())
+        /* // if i == 1, this is the 180 degree rotation
+        // if this rotation resulted in the same shape, the
+        // block is reciprocal and we're done
+        if (i == 1
+            && _isReciprocal(permutations[0], block))
         {
-            block._numRotations = i + 1;
-            permutations.push_back(block);
-        }
+            break;
+        } */
+        
+        block._numRotations = i + 1;
+        permutations.push_back(block);
     }
     
     return permutations;
@@ -107,7 +110,7 @@ CBlock CBlock::move(int rowOffset, int colOffset) const
 CBlock CBlock::moveTo(int row, int col) const
 {
     CBlock block = *this;
-    block._center = CCoordinate(row, col, false);
+    block._center = CCoordinate(row, col, false /* isRelative */);
     
     return block;
 }
@@ -164,6 +167,27 @@ void CBlock::_computeBoundingOffsets()
         _minColOffset = min(_minColOffset, col);
         _maxColOffset = max(_maxColOffset, col);
     }
+}
+
+// returns true if the shape of the block is the same
+// when rotated 180 degrees
+bool CBlock::_isReciprocal(const CBlock &orig, const CBlock &rotated) const
+{
+    if (orig._offsets.size() != rotated._offsets.size())
+    {
+        return false;
+    }
+    
+    for(int i = 0; i < orig._offsets.size(); i++)
+    {
+        if (abs(orig._offsets[i].getRow()) != abs(rotated._offsets[i].getRow())
+            || abs(orig._offsets[i].getColumn()) != abs(rotated._offsets[i].getColumn()))
+        {
+            return false;
+        }
+    }
+    
+    return true;
 }
 
 // rotates a block 90 degrees clockwise

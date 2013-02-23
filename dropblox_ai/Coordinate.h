@@ -57,7 +57,7 @@ private:
     
 public:
     
-    bool operator == (const CCoordinate&) const;
+    // bool operator == (const CCoordinate&) const;
     
 // instance methods
     
