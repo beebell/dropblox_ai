@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "0460"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "044FDC6416D87DC100F0202E"
+               BuildableName = "dropblox_ai"
+               BlueprintName = "dropblox_ai"
+               ReferencedContainer = "container:dropblox_ai.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      buildConfiguration = "Debug">
+      <Testables>
+      </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "044FDC6416D87DC100F0202E"
+            BuildableName = "dropblox_ai"
+            BlueprintName = "dropblox_ai"
+            ReferencedContainer = "container:dropblox_ai.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </TestAction>
+   <LaunchAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "044FDC6416D87DC100F0202E"
+            BuildableName = "dropblox_ai"
+            BlueprintName = "dropblox_ai"
+            ReferencedContainer = "container:dropblox_ai.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "&apos;{&quot;preview&quot;: [{&quot;type&quot;: 26, &quot;center&quot;: {&quot;i&quot;: 8, &quot;j&quot;: 6}, &quot;offsets&quot;: [{&quot;i&quot;: 0, &quot;j&quot;: 0}, {&quot;i&quot;: -1, &quot;j&quot;: 0}, {&quot;i&quot;: -1, &quot;j&quot;: 1}, {&quot;i&quot;: -1, &quot;j&quot;: -1}, {&quot;i&quot;: 1, &quot;j&quot;: 0}]}, {&quot;type&quot;: 15, &quot;center&quot;: {&quot;i&quot;: 7, &quot;j&quot;: 6}, &quot;offsets&quot;: [{&quot;i&quot;: 0, &quot;j&quot;: 0}, {&quot;i&quot;: -1, &quot;j&quot;: 0}, {&quot;i&quot;: 0, &quot;j&quot;: -1}, {&quot;i&quot;: 1, &quot;j&quot;: 0}, {&quot;i&quot;: 2, &quot;j&quot;: 0}]}, {&quot;type&quot;: 14, &quot;center&quot;: {&quot;i&quot;: 7, &quot;j&quot;: 6}, &quot;offsets&quot;: [{&quot;i&quot;: 0, &quot;j&quot;: 0}, {&quot;i&quot;: -1, &quot;j&quot;: 0}, {&quot;i&quot;: 0, &quot;j&quot;: 1}, {&quot;i&quot;: 1, &quot;j&quot;: 0}, {&quot;i&quot;: 2, &quot;j&quot;: 0}]}, {&quot;type&quot;: 27, &quot;center&quot;: {&quot;i&quot;: 8, &quot;j&quot;: 6}, &quot;offsets&quot;: [{&quot;i&quot;: 0, &quot;j&quot;: 0}, {&quot;i&quot;: 0, &quot;j&quot;: -1}, {&quot;i&quot;: 0, &quot;j&quot;: 1}, {&quot;i&quot;: -1, &quot;j&quot;: -1}, {&quot;i&quot;: 1, &quot;j&quot;: 1}]}, {&quot;type&quot;: 2, &quot;center&quot;: {&quot;i&quot;: 8, &quot;j&quot;: 6}, &quot;offsets&quot;: [{&quot;i&quot;: 0, &quot;j&quot;: 0}, {&quot;i&quot;: -1, &quot;j&quot;: 0}, {&quot;i&quot;: 1, &quot;j&quot;: 0}]}], &quot;state&quot;: &quot;playing&quot;, &quot;score&quot;: 4, &quot;block&quot;: {&quot;type&quot;: 12, &quot;center&quot;: {&quot;i&quot;: 8, &quot;j&quot;: 6}, &quot;offsets&quot;: [{&quot;i&quot;: 0, &quot;j&quot;: 0}, {&quot;i&quot;: -1, &quot;j&quot;: 0}, {&quot;i&quot;: -2, &quot;j&quot;: 0}, {&quot;i&quot;: 1, &quot;j&quot;: 0}, {&quot;i&quot;: 1, &quot;j&quot;: -1}]}, &quot;bitmap&quot;: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 22, 0, 0, 0, 0, 13, 0, 0, 0], [5, 0, 4, 22, 22, 22, 8, 8, 13, 13, 13, 13], [5, 28, 4, 4, 22, 0, 8, 8, 23, 10, 10, 10]]}&apos;"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "5"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Release"
+      debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "044FDC6416D87DC100F0202E"
+            BuildableName = "dropblox_ai"
+            BlueprintName = "dropblox_ai"
+            ReferencedContainer = "container:dropblox_ai.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>
