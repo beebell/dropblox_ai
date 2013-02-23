@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		044FDC6916D87DC100F0202E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC6816D87DC100F0202E /* main.cpp */; };
-		044FDC6B16D87DC100F0202E /* dropblox_ai.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 044FDC6A16D87DC100F0202E /* dropblox_ai.1 */; };
+		044FDC8916D87E7100F0202E /* CBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7116D87E7100F0202E /* CBlock.cpp */; };
+		044FDC8A16D87E7100F0202E /* CBoardSurface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7316D87E7100F0202E /* CBoardSurface.cpp */; };
+		044FDC8B16D87E7100F0202E /* CCoordinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC7516D87E7100F0202E /* CCoordinate.cpp */; };
+		044FDC8C16D87E7100F0202E /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8416D87E7100F0202E /* json_reader.cpp */; };
+		044FDC8D16D87E7100F0202E /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8516D87E7100F0202E /* json_value.cpp */; };
+		044FDC8E16D87E7100F0202E /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8716D87E7100F0202E /* json_writer.cpp */; };
+		044FDC8F16D87E7100F0202E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8816D87E7100F0202E /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +23,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				044FDC6B16D87DC100F0202E /* dropblox_ai.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -26,8 +30,28 @@
 
 /* Begin PBXFileReference section */
 		044FDC6516D87DC100F0202E /* dropblox_ai */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dropblox_ai; sourceTree = BUILT_PRODUCTS_DIR; };
-		044FDC6816D87DC100F0202E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		044FDC6A16D87DC100F0202E /* dropblox_ai.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = dropblox_ai.1; sourceTree = "<group>"; };
+		044FDC7116D87E7100F0202E /* CBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBlock.cpp; sourceTree = "<group>"; };
+		044FDC7216D87E7100F0202E /* CBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBlock.h; sourceTree = "<group>"; };
+		044FDC7316D87E7100F0202E /* CBoardSurface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CBoardSurface.cpp; sourceTree = "<group>"; };
+		044FDC7416D87E7100F0202E /* CBoardSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBoardSurface.h; sourceTree = "<group>"; };
+		044FDC7516D87E7100F0202E /* CCoordinate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCoordinate.cpp; sourceTree = "<group>"; };
+		044FDC7616D87E7100F0202E /* CCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCoordinate.h; sourceTree = "<group>"; };
+		044FDC7916D87E7100F0202E /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
+		044FDC7A16D87E7100F0202E /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		044FDC7B16D87E7100F0202E /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
+		044FDC7C16D87E7100F0202E /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forwards.h; sourceTree = "<group>"; };
+		044FDC7D16D87E7100F0202E /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		044FDC7E16D87E7100F0202E /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		044FDC7F16D87E7100F0202E /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
+		044FDC8016D87E7100F0202E /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		044FDC8116D87E7100F0202E /* json_batchallocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_batchallocator.h; sourceTree = "<group>"; };
+		044FDC8216D87E7100F0202E /* json_internalarray.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalarray.inl; sourceTree = "<group>"; };
+		044FDC8316D87E7100F0202E /* json_internalmap.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_internalmap.inl; sourceTree = "<group>"; };
+		044FDC8416D87E7100F0202E /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_reader.cpp; sourceTree = "<group>"; };
+		044FDC8516D87E7100F0202E /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_value.cpp; sourceTree = "<group>"; };
+		044FDC8616D87E7100F0202E /* json_valueiterator.inl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json_valueiterator.inl; sourceTree = "<group>"; };
+		044FDC8716D87E7100F0202E /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
+		044FDC8816D87E7100F0202E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +84,46 @@
 		044FDC6716D87DC100F0202E /* dropblox_ai */ = {
 			isa = PBXGroup;
 			children = (
-				044FDC6816D87DC100F0202E /* main.cpp */,
-				044FDC6A16D87DC100F0202E /* dropblox_ai.1 */,
+				044FDC7116D87E7100F0202E /* CBlock.cpp */,
+				044FDC7216D87E7100F0202E /* CBlock.h */,
+				044FDC7316D87E7100F0202E /* CBoardSurface.cpp */,
+				044FDC7416D87E7100F0202E /* CBoardSurface.h */,
+				044FDC7516D87E7100F0202E /* CCoordinate.cpp */,
+				044FDC7616D87E7100F0202E /* CCoordinate.h */,
+				044FDC7716D87E7100F0202E /* jsoncpp */,
+				044FDC8816D87E7100F0202E /* main.cpp */,
 			);
 			path = dropblox_ai;
+			sourceTree = "<group>";
+		};
+		044FDC7716D87E7100F0202E /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				044FDC7816D87E7100F0202E /* json */,
+				044FDC8116D87E7100F0202E /* json_batchallocator.h */,
+				044FDC8216D87E7100F0202E /* json_internalarray.inl */,
+				044FDC8316D87E7100F0202E /* json_internalmap.inl */,
+				044FDC8416D87E7100F0202E /* json_reader.cpp */,
+				044FDC8516D87E7100F0202E /* json_value.cpp */,
+				044FDC8616D87E7100F0202E /* json_valueiterator.inl */,
+				044FDC8716D87E7100F0202E /* json_writer.cpp */,
+			);
+			path = jsoncpp;
+			sourceTree = "<group>";
+		};
+		044FDC7816D87E7100F0202E /* json */ = {
+			isa = PBXGroup;
+			children = (
+				044FDC7916D87E7100F0202E /* autolink.h */,
+				044FDC7A16D87E7100F0202E /* config.h */,
+				044FDC7B16D87E7100F0202E /* features.h */,
+				044FDC7C16D87E7100F0202E /* forwards.h */,
+				044FDC7D16D87E7100F0202E /* json.h */,
+				044FDC7E16D87E7100F0202E /* reader.h */,
+				044FDC7F16D87E7100F0202E /* value.h */,
+				044FDC8016D87E7100F0202E /* writer.h */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,7 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044FDC6916D87DC100F0202E /* main.cpp in Sources */,
+				044FDC8916D87E7100F0202E /* CBlock.cpp in Sources */,
+				044FDC8A16D87E7100F0202E /* CBoardSurface.cpp in Sources */,
+				044FDC8B16D87E7100F0202E /* CCoordinate.cpp in Sources */,
+				044FDC8C16D87E7100F0202E /* json_reader.cpp in Sources */,
+				044FDC8D16D87E7100F0202E /* json_value.cpp in Sources */,
+				044FDC8E16D87E7100F0202E /* json_writer.cpp in Sources */,
+				044FDC8F16D87E7100F0202E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
