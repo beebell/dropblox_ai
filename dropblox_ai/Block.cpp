@@ -41,6 +41,7 @@ CBlock::CBlock(const Json::Value& block)
 
 // operators
 
+// implement support for output stream for debugging
 std::ostream& operator<<(std::ostream &strm, const CBlock &o) {
     return strm << "{CBlock:"
     << "[_type=" << o._type << "]"
@@ -52,21 +53,10 @@ std::ostream& operator<<(std::ostream &strm, const CBlock &o) {
     << "}";
 }
 
-/* bool CBlock::operator==(const CBlock& other) const
-{
-    return _type == other._type
-        && _center == other._center
-        && _offsets == other._offsets
-        && _minRowOffset == other._minRowOffset
-        && _maxRowOffset == other._maxRowOffset
-        && _minColOffset == other._minColOffset
-        && _maxColOffset == other._maxColOffset;
-    
-    // _numRotations intentionally ignored
-} */
-
 // instance methods
 
+// returns a collection containing all of the rotated
+// permutations for this block
 vector<CBlock> CBlock::getPermutations() const
 {
     vector<CBlock> permutations;
@@ -79,14 +69,9 @@ vector<CBlock> CBlock::getPermutations() const
     {
         CBlock block = permutations.back()._rotate();
         
-        /* // if i == 1, this is the 180 degree rotation
-        // if this rotation resulted in the same shape, the
-        // block is reciprocal and we're done
-        if (i == 1
-            && _isReciprocal(permutations[0], block))
-        {
-            break;
-        } */
+        // todo: only add this permutation to the collection
+        // if it isn't visually the same as one that already
+        // exists
         
         block._numRotations = i + 1;
         permutations.push_back(block);
@@ -95,7 +80,7 @@ vector<CBlock> CBlock::getPermutations() const
     return permutations;
 }
 
-// moves a block by manipulating the center coordinates
+// moves a block by manipulating its center coordinates
 // by the specified row and column offsets
 CBlock CBlock::move(int rowOffset, int colOffset) const
 {
@@ -105,7 +90,7 @@ CBlock CBlock::move(int rowOffset, int colOffset) const
     return block;
 }
 
-// moves a block by setting the center coordinates
+// moves a block by setting its center coordinates
 // to the specified row and column
 CBlock CBlock::moveTo(int row, int col) const
 {
@@ -115,7 +100,7 @@ CBlock CBlock::moveTo(int row, int col) const
     return block;
 }
 
-// renders the block to cerr to help visualization during debug sessions
+// renders a visual representation of the block to help debugging
 void CBlock::render() const
 {
     int width = getWidth();
@@ -147,11 +132,13 @@ void CBlock::render() const
         }
         cerr << endl;
     }
+    cerr << endl;
 }
 
 // computes the min and max row/col offsets used to
-// compute width and height and figure out where the
-// center is in relation to the block
+// compute width and height of the block and figure
+// out where the center is relative to the edges of
+// the rectangle
 void CBlock::_computeBoundingOffsets()
 {
     vector<CCoordinate>::iterator itr;
@@ -173,21 +160,8 @@ void CBlock::_computeBoundingOffsets()
 // when rotated 180 degrees
 bool CBlock::_isReciprocal(const CBlock &orig, const CBlock &rotated) const
 {
-    if (orig._offsets.size() != rotated._offsets.size())
-    {
-        return false;
-    }
-    
-    for(int i = 0; i < orig._offsets.size(); i++)
-    {
-        if (abs(orig._offsets[i].getRow()) != abs(rotated._offsets[i].getRow())
-            || abs(orig._offsets[i].getColumn()) != abs(rotated._offsets[i].getColumn()))
-        {
-            return false;
-        }
-    }
-    
-    return true;
+    // todo: implement this method
+    return false;
 }
 
 // rotates a block 90 degrees clockwise

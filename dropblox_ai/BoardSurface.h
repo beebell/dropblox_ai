@@ -17,6 +17,7 @@
 
 using namespace std;
 
+// class to represent the board
 class CBoardSurface
 {
     
@@ -27,7 +28,7 @@ private:
     // board state
     int _surface[BOARD_HEIGHT][BOARD_WIDTH];
     
-    // the number of rows removed from this surface during a drop
+    // the number of rows removed from this surface on a drop
     int _numRowsRemoved = 0;
     
 // properties
@@ -56,17 +57,27 @@ private:
     
     bool _isUnreachable(int row, int col) const;
     
+    bool _isUnreachableFromLeft(int row, int col) const;
+    
+    bool _isUnreachableFromRight(int row, int col) const;
+    
+    bool _isUnreachableFromAbove(int row, int col) const;
+    
+    void _merge(const CBlock& block, float& score);
+    
+    void _removeFullRows();
+    
 public:
 
     bool check(const CBlock& block) const;
     
     float computeScore() const;
     
-    CBoardSurface drop(const CBlock& block) const;
-    
-    void removeFullRows();
+    CBoardSurface drop(const CBlock& block, int& numDown, float& score) const;
     
     void render() const;
+    
+    void seekBetterSolution(const CBlock& block, int numDown, int& numLeft, int& numRight, float& score) const;
     
 };
 

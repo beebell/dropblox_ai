@@ -55,10 +55,6 @@ private:
     
     friend std::ostream& operator<<(std::ostream&, const vector<CCoordinate>&);
     
-public:
-    
-    // bool operator == (const CCoordinate&) const;
-    
 // instance methods
     
 private:

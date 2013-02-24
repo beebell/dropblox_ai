@@ -14,6 +14,7 @@
 		044FDC8D16D87E7100F0202E /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8516D87E7100F0202E /* json_value.cpp */; };
 		044FDC8E16D87E7100F0202E /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8716D87E7100F0202E /* json_writer.cpp */; };
 		044FDC8F16D87E7100F0202E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC8816D87E7100F0202E /* main.cpp */; };
+		044FDC9316D9699E00F0202E /* Solution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 044FDC9116D9699E00F0202E /* Solution.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,8 @@
 		044FDC8716D87E7100F0202E /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
 		044FDC8816D87E7100F0202E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		044FDC9016D91FB000F0202E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		044FDC9116D9699E00F0202E /* Solution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solution.cpp; sourceTree = "<group>"; };
+		044FDC9216D9699E00F0202E /* Solution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Solution.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 		044FDC6716D87DC100F0202E /* dropblox_ai */ = {
 			isa = PBXGroup;
 			children = (
+				044FDC9116D9699E00F0202E /* Solution.cpp */,
+				044FDC9216D9699E00F0202E /* Solution.h */,
 				044FDC9016D91FB000F0202E /* Constants.h */,
 				044FDC7116D87E7100F0202E /* Block.cpp */,
 				044FDC7216D87E7100F0202E /* Block.h */,
@@ -186,6 +191,7 @@
 				044FDC8D16D87E7100F0202E /* json_value.cpp in Sources */,
 				044FDC8E16D87E7100F0202E /* json_writer.cpp in Sources */,
 				044FDC8F16D87E7100F0202E /* main.cpp in Sources */,
+				044FDC9316D9699E00F0202E /* Solution.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

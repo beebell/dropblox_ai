@@ -8,18 +8,27 @@
 #ifndef dropblox_ai_Constants_h
 #define dropblox_ai_Constants_h
 
+// fixed width and height of the playing surface
 const int BOARD_HEIGHT = 33;
 const int BOARD_WIDTH = 12;
 
-const int UNREACHABLE_PENALTY = 12;
+// various penalties to impose when computing the score for a particular solution
 
-// change this to 4 after left and right are working
-const int OBSTRUCTED_PENALTY = 12;
-const int OCCUPIED_PENALTY = 1;
+// prefer columns furthest away from the center
+const float COLUMN_PENALTY[BOARD_WIDTH] = {
+    1.0,1.02,1.04,1.06,1.08,1.10,1.10,1.08,1.06,1.04,1.02,1.0
+};
+
+// prefer keeping the height as low as possible
 const int HEIGHT_PENALTY = 1.1;
 
-const float COLUMN_PENALTY[BOARD_WIDTH] = {
-    1.0,1.1,1.2,1.3,1.4,1.5,1.5,1.4,1.3,1.2,1.1,1.0
-};
+// obstructed blocks are expensive
+const int OBSTRUCTED_PENALTY = 4; // todo: make this lower than unreachable after left and right commands are working
+
+// occupied blocks are normal
+const int OCCUPIED_PENALTY = 1;
+
+// unreachable blocks are expensive
+const int UNREACHABLE_PENALTY = 4;
 
 #endif

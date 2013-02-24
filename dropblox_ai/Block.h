@@ -16,6 +16,7 @@
 
 using namespace std;
 
+// class to represent a game piece
 class CBlock
 {
 
@@ -43,7 +44,7 @@ private:
     int _maxColOffset = 0;
     
     // if this is a rotated block, indicates the number of 90-degree clockwise rotations
-    // to arrive at this representation
+    // performed to achieve this orientation
     int _numRotations = 0;
     
 // properties
@@ -75,8 +76,6 @@ private:
     friend std::ostream& operator << (std::ostream&, const CBlock&);
     
 public:
-    
-    // bool operator == (const CBlock&) const;
     
 // instance methods
     
